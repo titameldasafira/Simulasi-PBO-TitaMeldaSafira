@@ -13,11 +13,12 @@ class PendaftaranKedinasan extends Pendaftaran {
         $this->instansiSponsor = $data['instansi_sponsor'] ?? null;
     }
 
-    // Implementasi method abstrak dari parent
+     /**
+     * TAHAP 5: Overriding hitungTotalBiaya() untuk Jalur Kedinasan
+     * Total Biaya = biayaPendaftaranDasar * 1.25 (Surcharge administrasi khusus 25%)
+     */
     public function hitungTotalBiaya() {
-        // Contoh logika: Jalur kedinasan ada tambahan biaya matrikulasi/seragam sebesar 50.000
-        $biayaTambahan = 50000.00;
-        return $this->biayaPendaftaranDasar + $biayaTambahan;
+        return $this->biayaPendaftaranDasar * 1.25;
     }
 
     public function tampilkanInfoJalur() {

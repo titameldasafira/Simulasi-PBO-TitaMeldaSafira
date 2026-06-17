@@ -13,11 +13,12 @@ class PendaftaranPrestasi extends Pendaftaran {
         $this->tingkatPrestasi = $data['tingkat_prestasi'] ?? null;
     }
 
-    // Implementasi method abstrak dari parent
+    /**
+     * TAHAP 5: Overriding hitungTotalBiaya() untuk Jalur Prestasi
+     * Total Biaya = biayaPendaftaranDasar - 50000 (Potongan insentif apresiasi)
+     */
     public function hitungTotalBiaya() {
-        // Contoh logika: Jalur prestasi mendapatkan potongan biaya pendaftaran sebesar 40%
-        $diskon = 0.40 * $this->biayaPendaftaranDasar;
-        return $this->biayaPendaftaranDasar - $diskon;
+        return $this->biayaPendaftaranDasar - 50000;
     }
 
     public function tampilkanInfoJalur() {
